@@ -35,7 +35,7 @@ data "aws_subnets" "default" {
   }
 }
 
-# Pick the first subnet [by default default subnet is public subnet in each AZ]
+# Pick the first subnet
 data "aws_subnet" "default" {
   id = tolist(data.aws_subnets.default.ids)[0]
 }
@@ -64,8 +64,9 @@ resource "aws_security_group" "app_sg" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+  # frontend service ports 3000 allowed to all
   ingress {
-    description = "frontend services"
+    description = "Public services"
     from_port   = 3000
     to_port     = 3000
     protocol    = "tcp"
@@ -77,7 +78,7 @@ resource "aws_security_group" "app_sg" {
     from_port   = 3001
     to_port     = 3004
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    self        = true #for testing it from browser use cidr_blocks = ["0.0.0.0/0"]
   }
 
   # Outbound all
