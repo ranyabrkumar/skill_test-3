@@ -92,8 +92,33 @@ terraform destroy
 ## Terrafrom Apply result:
 ![terraform_apply](https://github.com/user-attachments/assets/8e287f76-d894-4120-906b-abea5903b481)
 
+![terraform_apply](https://github.com/user-attachments/assets/2e809736-ce8e-4f20-8892-87a23d4bedd3)
+
 ## Docker ps
 ![dockerps](https://github.com/user-attachments/assets/b1d84971-22f1-45a9-ad25-7c3ff62f13e0)
+
+![docker_deployment](https://github.com/user-attachments/assets/5a20cd39-55f1-4a04-b186-91c20b1fb0d8)
+
+## To test internal service we can use 
+### 1. Curl
+```
+[ec2-user@ip-172-31-72-119 ~]$ curl -s http://localhost:3001
+user Service Running
+[ec2-user@ip-172-31-72-119 ~]$ curl -s http://localhost:3002
+Product Service Running
+[ec2-user@ip-172-31-72-119 ~]$ curl -s http://localhost:3003
+Order Service Running
+[ec2-user@ip-172-31-72-119 ~]$ curl -s http://localhost:3004
+Cart Service Running
+```
+### 2. Enable Ingress for 3001-3004 accessible to all
+<img width="584" height="208" alt="image" src="https://github.com/user-attachments/assets/c0951f80-f733-47a7-8548-e81982e9f9be" />
+<img width="601" height="179" alt="image" src="https://github.com/user-attachments/assets/21de486b-619f-484d-bac6-9e0cc636695c" />
+<img width="644" height="212" alt="image" src="https://github.com/user-attachments/assets/b2b84d96-50b0-4796-8a71-c595e2052962" />
+<img width="649" height="180" alt="image" src="https://github.com/user-attachments/assets/b654aefb-5d3c-441c-b697-6a1519b475bd" />
+<img width="576" height="243" alt="image" src="https://github.com/user-attachments/assets/4e3f11e4-e4cc-4e6d-90cf-7a4a75e7b96d" />
+
+
 
 
 
