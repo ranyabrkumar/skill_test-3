@@ -72,6 +72,9 @@ terrafrom apply
 ```
 terraform destroy
 ```
+<img width="1529" height="625" alt="image" src="https://github.com/user-attachments/assets/327a3718-6a51-4d3e-b96e-f1eeed2b8278" />
+<img width="1005" height="560" alt="image" src="https://github.com/user-attachments/assets/6523ff01-3416-4686-b7d4-5c503914369f" />
+
 
 ## Testing | Validation
 ## 1. Frontend service:
