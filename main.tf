@@ -64,11 +64,17 @@ resource "aws_security_group" "app_sg" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-
+  ingress {
+    description = "frontend services"
+    from_port   = 3000
+    to_port     = 3000
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
   # Internal service ports 3001-3004 allowed within same SG
   ingress {
     description = "Internal services"
-    from_port   = 3000
+    from_port   = 3001
     to_port     = 3004
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
